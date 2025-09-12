@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Secret Photo Album</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="password-screen">
+        <div class="password-box">
+            <h2>Enter Your Secret Code</h2>
+            <input type="password" id="password-input" placeholder="••••••••">
+            <button onclick="checkPassword()">Unlock</button>
+        </div>
+    </div>
+
+    <div id="main-content" style="display: none;">
+        <header>
+            <h1>My Purple Diary</h1>
+            <div class="header-icons">
+                <i class="fas fa-plus-circle" title="Add Photo"></i>
+                <i class="fas fa-save" title="Save"></i>
+                <i class="fas fa-share-alt" title="Share"></i>
+            </div>
+        </header>
+
+        <main>
+            <div class="folder-controls">
+                <span>Folder Style:</span>
+                <button onclick="changeFolderStyle('grid')"><i class="fas fa-th-large"></i></button>
+                <button onclick="changeFolderStyle('list')"><i class="fas fa-bars"></i></button>
+            </div>
+
+            <div id="photo-gallery" class="photo-grid">
+                <div class="folder">
+                    <div class="folder-icon">
+                        <i class="fas fa-folder"></i>
+                    </div>
+                    <div class="folder-name">My Memories</div>
+                    <div class="folder-actions">
+                        <i class="fas fa-trash-alt" title="Delete"></i>
+                    </div>
+                </div>
+                <div class="folder">
+                    <div class="folder-icon">
+                        <i class="fas fa-folder"></i>
+                    </div>
+                    <div class="folder-name">Favorite Moments</div>
+                    <div class="folder-actions">
+                        <i class="fas fa-trash-alt" title="Delete"></i>
+                    </div>
+                </div>
+                 <div class="folder">
+                    <div class="folder-icon">
+                        <i class="fas fa-folder"></i>
+                    </div>
+                    <div class="folder-name">Dream Land</div>
+                    <div class="folder-actions">
+                        <i class="fas fa-trash-alt" title="Delete"></i>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div class="chat-container">
+            <div class="chat-header">
+                <h3>Secret Chat</h3>
+            </div>
+            <div class="chat-box">
+                <div class="chat-message received">Hello!</div>
+                <div class="chat-message sent">Hi there!</div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type a message...">
+                <button><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+                      </html>
+                      
