@@ -1,6 +1,13 @@
-build]
-publish = "public"
-command = "hugo"
+[build]
+  # Hugo build command ကို သတ်မှတ်ခြင်း။
+  # "hugo" ကိုပဲ သုံးရင် ရပါတယ်။
+  command = "hugo --gc --minify"
 
-[context.production.environment]
-HUGO_VERSION = "0.121.2"
+  # Hugo ကနေ generate လုပ်လိုက်တဲ့ static files တွေ ရှိတဲ့ folder (default က "public") ကို သတ်မှတ်ခြင်း။
+  publish = "public"
+
+  # Hugo version ကို သတ်မှတ်ခြင်း။
+  # ဒါက build process ကို ပိုပြီး တိကျစေပါတယ်။
+  [build.environment]
+    HUGO_VERSION = "0.121.2"
+    
