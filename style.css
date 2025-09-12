@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --primary-purple: #a450e0;
+    --secondary-purple: #d0a5f5;
+    --light-purple: #f3e8ff;
+    --dark-purple: #4a235a;
+    --text-color: #333;
+    --bg-color: #fdfaff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, var(--light-purple), var(--secondary-purple));
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+/* Password Screen */
+#password-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://www.transparenttextures.com/patterns/glamorous.png');
+    background-color: var(--primary-purple);
+}
+
+.password-box {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.password-box h2 {
+    font-family: 'Pacifico', cursive;
+    color: var(--primary-purple);
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.password-box input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--secondary-purple);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.password-box button {
+    background: var(--primary-purple);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.password-box button:hover {
+    background: var(--dark-purple);
+    transform: scale(1.05);
+}
+
+/* Main Content */
+#main-content {
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-family: 'Pacifico', cursive;
+    color: var(--primary-purple);
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px var(--light-purple);
+}
+
+.header-icons i {
+    font-size: 1.8em;
+    color: var(--secondary-purple);
+    margin-left: 20px;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.header-icons i:hover {
+    color: var(--primary-purple);
+    transform: scale(1.2) rotate(10deg);
+}
+
+.folder-controls {
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.folder-controls button {
+    background: white;
+    border: 2px solid var(--secondary-purple);
+    color: var(--primary-purple);
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.folder-controls button:hover {
+    background: var(--primary-purple);
+    color: white;
+}
+
+/* Photo Gallery */
+#photo-gallery {
+    display: grid;
+    gap: 25px;
+}
+
+.photo-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.photo-list {
+    grid-template-columns: 1fr;
+}
+
+.folder {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s;
+    position: relative;
+    overflow: hidden;
+}
+
+.folder:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(164, 80, 224, 0.2);
+}
+
+.folder-icon i {
+    font-size: 4em;
+    color: var(--secondary-purple);
+    transition: color 0.3s;
+}
+
+.folder:hover .folder-icon i {
+    color: var(--primary-purple);
+}
+
+.folder-name {
+    margin-top: 15px;
+    font-weight: 600;
+    color: var(--dark-purple);
+}
+
+.folder-actions {
+    position: absolute;
+    top: 10px;
+    right: -40px; /* Initially hidden */
+    transition: right 0.3s ease-in-out;
+}
+
+.folder:hover .folder-actions {
+    right: 10px;
+}
+
+.folder-actions i {
+    color: var(--primary-purple);
+    cursor: pointer;
+}
+
+/* Chat Box */
+.chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 320px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: all 0.4s;
+}
+
+.chat-header {
+    background: var(--primary-purple);
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+.chat-header h3 {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.5em;
+}
+
+.chat-box {
+    padding: 15px;
+    height: 300px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-message {
+    padding: 10px 15px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    max-width: 75%;
+    animation: popIn 0.3s;
+}
+
+.chat-message.sent {
+    background: var(--primary-purple);
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 5px;
+}
+
+.chat-message.received {
+    background: var(--light-purple);
+    color: var(--dark-purple);
+    align-self: flex-start;
+    border-bottom-left-radius: 5px;
+}
+
+.chat-input {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid var(--light-purple);
+}
+
+.chat-input input {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    background: var(--light-purple);
+}
+
+.chat-input input:focus {
+    outline: none;
+}
+
+.chat-input button {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: var(--primary-purple);
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes popIn {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
